@@ -14,6 +14,3 @@ jobs:
           -H 'Accept: application/vnd.github.v3+json' \
           -u ${{ secrets.PAT_USERNAME}}:${{ secrets.ACCESS_TOKEN }} \
           -d '{"event_type":"push-to-simba-repo","client_payload":{"message":"push to simba repo has occured"}}'
-
-
-          emely3h/github-actions
