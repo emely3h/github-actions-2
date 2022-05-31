@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Trigger workflow repo 1
         run: |
-          curl -X POST https://github.com/repos/emely3h/github-actions/dispatches \
-          -H 'Accept: application/vnd.github.everest-preview+json' \
+          curl -X POST https://github.com/repos/emely3h/github-actions/blob/master/.github/workflows/learn-github-actions.yaml/dispatches \
+          -H 'Accept:application/vnd.github.everest-preview+json' \
           -u ${{ secrets.ACCESS_TOKEN }} \
           --data '{"event_type":"push-to-simba-repo","client_payload":{"message":"push to simba repo has occured"}}'
