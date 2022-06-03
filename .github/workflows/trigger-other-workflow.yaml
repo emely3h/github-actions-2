@@ -9,8 +9,16 @@ jobs:
       - ubuntu-latest
     steps:
       - name: Trigger workflow repo 1
-        run: |
-          curl -X POST https://api.github.com/repos/emely3h/github-actions/dispatches \
-          -H 'Accept: application/vnd.github.v3+json' \
-          -u ${{ secrets.ACCESS_TOKEN }} \
-          -d '{"event_type":"push-to-simba-repo","client_payload":{"message":"push to simba repo has occured"}}'
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          event-type: push-to-simba-repo"
+
+
+
+
+      #  run: |
+      #   curl -X POST https://api.github.com/repos/emely3h/github-actions/dispatches \
+      #   -H 'Accept: application/vnd.github.v3+json' \
+      #   -u ${{ secrets.ACCESS_TOKEN }} \
+      #   d '{"event_type":"push-to-simba-repo","client_payload":{"message":"push to simba repo has occured"}}'
