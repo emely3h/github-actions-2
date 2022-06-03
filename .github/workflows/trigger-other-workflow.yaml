@@ -11,8 +11,10 @@ jobs:
       - name: Trigger workflow repo 1
         uses: peter-evans/repository-dispatch@v2
         with:
+          repository: emely3h/github-actions
           token: ${{ secrets.ACCESS_TOKEN }}
           event-type: push-to-simba-repo
+          client-payload: '{"message":"push to simba repo has occured"}'
 
 
 
