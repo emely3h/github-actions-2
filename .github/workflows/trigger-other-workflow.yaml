@@ -3,6 +3,8 @@ on:
   push:
     branches: 
       - master
+    paths:
+      - 'tenant_group_**_prod**' 
 jobs:
   check-bats-version:
     runs-on: 
